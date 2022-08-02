@@ -5,14 +5,14 @@ This is the GitHub page for the *comics* multiomics web-server.
 
 *Comics* is a [shiny](https://shiny.rstudio.com) interface to the *The Molecular Human* and provides a visualization of over 34,000 associations between over 8,700 multiomics traits and disease endpoints.
 
-The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 374 participants of the multi-ethnic diabetes case-control study QMDiab.
+The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 374 participants of the multi-ethnic diabetes case-control study [QMDiab](https://academic.oup.com/jcem/article/99/3/E479/2537128).
 
 The links between the multiomics traits include partial correlations between traits from the same platform (GGMs), mutual best hits for pairwise all-against-all correlations between platforms, genome-wide, epigenome-wide and transcriptome-wide multiomics and disease associations, and associations with QMDiab clinical endpoints.
 
 Details of the *comics* server and its underlying multiomics networks can be found on the [*comics* homepage](http://www.metabolomix.com/comics/).
 
 ## Running comics via a web server 
-A comics web server is available at [shinyapps.io](https://www.shinyapps.io/) following this link: http://comics.metabolomix.com.
+A comics web server is available following this link: http://comics.metabolomix.com.
 
 ## Running comics locally using docker
 You need to download and install docker as described [here](https://www.docker.com/get-started/).
@@ -46,3 +46,4 @@ Here is a screenshot of the `comics` server:
 
 The `comics` server is a convenient interface to *The Molecular Human*. It allows to navigate the neighborhoods of individual multiomics and disease traits. However, more complex network analyses require more spohisticated tools. For this purpose we provide a [cytoscape](https://cytoscape.org/) version of the full network with matching the-shapes and colors.
 
+(Open this file using `cytoscape`)[cytoscape/MultiomicsNetwork.cys]
