@@ -46,4 +46,4 @@ Here is a screenshot of the `comics` server:
 
 The `comics` server is a convenient interface to *The Molecular Human*. It allows to navigate the neighborhoods of individual multiomics and disease traits. However, more complex network analyses require more spohisticated tools. For this purpose we provide a [cytoscape](https://cytoscape.org/) version of the full network with matching the-shapes and colors.
 
-Open [this file](cytoscape/MultiomicsNetwork.cys) using `cytoscape`
+Download and open [this file](cytoscape/MultiomicsNetwork.cys) using `cytoscape`.
