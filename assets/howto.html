@@ -1,4 +1,61 @@
-<h4>more information on comics can be found here:</h4>
+The backbone of comics is a network consisting of 
+over 34,000 associations (the edges) between over 
+8,700 multiomics traits and disease endpoint (the nodes).
+<p>
+
+Comics allows the user to navigate this network by selecting 
+focus nodes in the network. 
+Comics then displays all n-th degree neighboring nodes up to a specified maximum number of nodes.
+<p>
+
+Once the first neighborhood is displayed, additional full next level neighborhoods 
+of the focus trait shall be included, but only if the number of maximum nodes is not exceeded by doing so.
+To avoid an overload of the server (which leads to a freeze of the network display and 
+requires a reload of the page), the maximum number of nodes is currently limitted to 200.
+<p>
+
+One exception is that the first degree neighborhood of the focus trait shall always be displayed, 
+even if this leads to an excess in the number of maxium nodes.
+In some cases (hub nodes like "Diabetes") this can lead to "busy" networks with a slow response time.
+<p>
+
+<h4>Basic navigation</h4>
+The "Network" tab is the main interface of comics.
+A focus node can either be selected by clicking on a node in an already displayed sub-network, 
+or using the pull-down menus "select platform" and "select trait".
+The selected trait shall be displayed ion the "Click here to focus on ..." button.
+Click this button to refocus the network display on the selected trait.
+Adjust the "max nodes" pull-down menu to limit the number of maximum nodes
+(select '1' to always show only the first degree neighborhood).
+<p>
+
+Hover with the mouse over the nodes and edges to display their properties.
+<p>
+
+Use the mouse to rearrange the network layout.
+<p>
+
+Hint: The pull-down menu "select trait" is searchable. In order to do so, 
+hit the backspace key and then start typing (this is a shiny feature).
+Use "select platform" to limit the number of items in the "select trait" pull-down menu.
+<p>
+
+<h4>Selecting pair-wise associations</h4>
+The full set of all association data is available in shiny format in the "Tables" tab and can be searched
+using the "Search" text box. Note that there are multipe tab for the different types
+of association (GWAS, EWAS, RWAS, MBH, GGM, GENO, CATA, and STAT).
+Click on a single association line in one of the table, and then on the button
+"Click here to focus network on association ...".
+This will display the neighborhoods of the two associated traits.
+<p>
+
+<h4>Exporting the displayed network</h4>
+Use the "Export" tab to export all data from the current network.
+If you want to export the entire comics dataset, you can download the Excel file 
+provided on the comics <a href="https://github.com/karstensuhre/comics">comics GitHub page</a>.
+The comics server uses this Excel file as input and starting point.
+
+<h4>More information on comics can be found here:</h4>
 
 <ul>
 <li>
@@ -9,4 +66,11 @@
 
 <li>
 <a href="http://comics.metabolomix.com/">comics server</a>
+
 </ul>
+
+<h4>Disclaimer</h4>
+This is a purely academic not-for-profit web-server and consequently comes without 
+any warranties. The server is maintainted by <a href="http://suhre.fr">Karsten Suhre</a>.
+More details can be found on the web-sites listed above.
+

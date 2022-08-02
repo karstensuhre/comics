@@ -687,7 +687,7 @@ server <- function(input, output, session) {
 ui <- dashboardPage(skin="red",
   
   ##################### TITLE ####################
-  dashboardHeader(title = "QMDiab multiomics"),
+  dashboardHeader(title = "QMDiab comics"),
   
   ##################### SIDEBAR ##################
   dashboardSidebar( width = 150,
