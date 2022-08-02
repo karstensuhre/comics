@@ -26,7 +26,7 @@ docker run --detach --name comics -p 8080:3838 ghcr.io/karstensuhre/comics
 Navigate to your browser and open the following page: http://localhost:8080.
 
 ## Running comics locally in RStudio
-All files required to run comics locally using [RStudio](https://www.rstudio.com) are in the [`./assets`](./assets) directory. Start-up `rstudio` and then launch `app.R`.
+All files required to run comics locally using [RStudio](https://www.rstudio.com) are in the [./assets](./assets) directory of this GitHub repository. Start-up `rstudio` and then launch `app.R` as a shiny app.
 
 Note: you need to have the following libraries installed in RStudio:
 ```
