@@ -1,7 +1,13 @@
 # comics
-The Molecular Human – A Roadmap of Molecular Interactions Linking Multiomics Networks with Disease Endpoints.
+**The Molecular Human – A Roadmap of Molecular Interactions Linking Multiomics Networks with Disease Endpoints**
 
-Visit the [comics homepage](http://www.metabolomix.com/comics/) for details.
+This is the GitHub page for the *comics* multiomics web-server.
+
+*comics* is a [shiny](https://shiny.rstudio.com) interface to the *The Molecular Human* and provides a visualization of over 34,000 correslations and associations between over 8,700 multiomics traits and disease endpoints.
+
+The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 374 participants of the multi-ethnic diabetes case-control study QMDiab.
+
+Details of the *comics* server and its underlying multiomics networks can be found on the [*comics* homepage](http://www.metabolomix.com/comics/).
 
 ## Running comics via a web server 
 A comics web server is available at [shinyapps.io](https://www.shinyapps.io/) following this link: http://comics.metabolomix.com
