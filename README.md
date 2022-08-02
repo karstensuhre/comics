@@ -37,3 +37,7 @@ install.packages("shiny")
 install.packages("shinydashboard")
 install.packages("DT")
 ```
+
+Here is a screenshot of the `comics` server:
+
+![Comics Screenshot](ComicsScreenshot1.png)
