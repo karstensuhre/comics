@@ -3,7 +3,7 @@
 
 This is the GitHub page for the *comics* multiomics web-server.
 
-*Comics* is a [shiny](https://shiny.rstudio.com) interface to the *The Molecular Human* and provides a visualization of over 34,000 associations between over 8,700 multiomics traits and disease endpoints.
+*Comics* is a [shiny interface](http://comics.metabolomix.com) to the *The Molecular Human* and provides a visualization of over 34,000 associations between over 8,700 multiomics traits and disease endpoints.
 
 The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 374 participants of the multi-ethnic diabetes case-control study [QMDiab](https://academic.oup.com/jcem/article/99/3/E479/2537128).
 
