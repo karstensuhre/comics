@@ -50,7 +50,11 @@ docker.exe container rm comics
 # start the image
 docker.exe run --detach --name comics -p 8080:3838 ghcr.io/karstensuhre/comics
 
+# push to repository
+echo "to update the docker image on GitHub run the following commands:"
+echo "docker.exe login ghcr.io"
+echo "docker.exe push ghcr.io/karstensuhre/comics"
+
 # ssh into the image
 docker.exe exec -it comics /bin/bash
-
 
