@@ -13,6 +13,7 @@
 #                       - add an examples page
 #         4 August 2022 - fixed a weird bug when clicking again on a selected table entry
 #                       - added filter option to tables
+#                       - fixed a problem that prevented the display of GWAS traits that contain single quotes, like Crohn's
 #
 #
 #PURPOSE: reformat info from Supplementary Tables to generate a network
@@ -57,6 +58,13 @@ STAT = read_excel(infile, sheet = "STAT")
 GENO = read_excel(infile, sheet = "GENO")
 CATA = read_excel(infile, sheet = "CATA")
 ANNO = read_excel(infile, sheet = "ANNO")
+
+# fix a problem with quotes in trait names (this blocks using them in URL queries)
+cat("removing ' from CATA$TRAIT\n")
+CATA$TRAIT = gsub("'", " ", CATA$TRAIT)
+ANNO$TRAIT = gsub("'", " ", ANNO$TRAIT)
+ANNO$TRAITID = gsub("'", " ", ANNO$TRAITID)
+ANNO$SHORTNAME = gsub("'", " ", ANNO$SHORTNAME)
 
 GWAS_edges = data.frame(
   id = GWAS$ID,
@@ -488,11 +496,11 @@ server <- function(input, output, session) {
   # read the URL parameter from session$clientData$url_search
   observe({
     query <- parseQueryString(session$clientData$url_search)
-    if (!is.null(query[['maxnodes']])) {
-      updateSelectInput(session, "maxnodes", selected = query[['maxnodes']])    
-    }
     if (!is.null(query[['focus']])) {
       storage$focus = query[['focus']]
+    }
+    if (!is.null(query[['maxnodes']])) {
+      updateSelectInput(session, "maxnodes", selected = query[['maxnodes']])    
     }
   })
   
@@ -667,7 +675,7 @@ server <- function(input, output, session) {
                      TRAIT2 = zwi$to
                      )
     out
-    }, rownames = FALSE, selection = 'single', server = FALSE, extensions = 'Buttons', options = list(pageLength = 10, scrollX = TRUE, dom = 'Blfrtip', 
+    }, filter = 'top', rownames = FALSE, selection = 'single', server = FALSE, extensions = 'Buttons', options = list(pageLength = 10, scrollX = TRUE, dom = 'Blfrtip', 
                                                                                                       buttons = 
                                                                                                         list("copy", list(
                                                                                                           extend = "collection"
