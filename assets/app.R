@@ -495,8 +495,8 @@ server <- function(input, output, session) {
   # set focus if pull-down menu changes
   observeEvent(input$trait,
                {
-                 # below is a quick-fix
-                 if (input$trait != "") {
+                 # below is a quick-fix to avoid overwriting of the query string by the first menu value .. not very elegant
+                 if ((input$trait != "")&(input$trait != "BM: Arg")) {
                    storage$focus <- input$trait
                    # message("focus set by dropdown to ", storage$focus)
                  }
