@@ -11,6 +11,9 @@
 #                        add passing a query string to the server
 #         1 August 2022 - add HTML code to the about page 
 #                       - add an examples page
+#         4 August 2022 - fixed a weird bug when clicking again on a selected table entry
+#                       - added filter option to tables
+#
 #
 #PURPOSE: reformat info from Supplementary Tables to generate a network
 #MODIF:
@@ -592,16 +595,21 @@ server <- function(input, output, session) {
     message("limiting to maxnodes = ", maxnodes)
     message("GoButton pressed: ", input$GoButton)
     message("submitInfo pressed: ", input$submitInfo)
+    message("storage$focus:", isolate(storage$focus))
+
+    # to fix some weird bug
+    zwi = isolate(storage$focus)
+    zwi = zwi[1]
     
-    if (length(isolate(storage$focus)) == 0) {
+    if (length(zwi) == 0) {
       message("storage$focus empty, returning")
       act_trait = ""
       return()
-    } else if (isolate(storage$focus) == "") {
+    } else if (zwi == "") {
       message("storage$focus empty, returning")
       act_trait = ""
       return()
-    } else if (isolate(storage$focus) == "special:pair") {
+    } else if (zwi == "special:pair") {
       message("selected an edge")
       act_trait = c(isolate(storage$selected_TRAIT1), isolate(storage$selected_TRAIT2))
       # storage$focus = storage$selected_TRAIT1 # set focus to the first trait of the edge
@@ -670,14 +678,14 @@ server <- function(input, output, session) {
   
    
   ############# mytable
-  output$GWAStable = DT::renderDataTable({GWAS}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$EWAStable = DT::renderDataTable({EWAS}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$RWAStable = DT::renderDataTable({RWAS}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$MBHtable = DT::renderDataTable({MBH}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$GGMtable = DT::renderDataTable({GGM}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$GENOtable = DT::renderDataTable({GENO}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$CATAtable = DT::renderDataTable({CATA}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
-  output$STATtable = DT::renderDataTable({STAT}, rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$GWAStable = DT::renderDataTable({GWAS}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$EWAStable = DT::renderDataTable({EWAS}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$RWAStable = DT::renderDataTable({RWAS}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$MBHtable = DT::renderDataTable({MBH}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$GGMtable = DT::renderDataTable({GGM}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$GENOtable = DT::renderDataTable({GENO}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$CATAtable = DT::renderDataTable({CATA}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
+  output$STATtable = DT::renderDataTable({STAT}, filter = 'top', rownames = FALSE, selection = 'single', options = list(pageLength = 10, scrollX = TRUE))
   
 }
 

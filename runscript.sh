@@ -1,4 +1,5 @@
-set -x
+# use this script to update the docker image
+set -
 
 # copy files to assets
 rm -r -f assets
