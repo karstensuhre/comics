@@ -495,20 +495,22 @@ server <- function(input, output, session) {
   # set focus if pull-down menu changes
   observeEvent(input$trait,
                {
+                 # below is a quick-fix
                  if (input$trait != "") {
                    storage$focus <- input$trait
                    # message("focus set by dropdown to ", storage$focus)
                  }
+                
                })
   
-  # read the URL parameter from session$clientData$url_search
+  # # read the URL parameter from session$clientData$url_search
   observe({
     query <- parseQueryString(session$clientData$url_search)
     if (!is.null(query[['focus']])) {
       storage$focus = query[['focus']]
     }
     if (!is.null(query[['maxnodes']])) {
-      updateSelectInput(session, "maxnodes", selected = query[['maxnodes']])    
+      updateSelectInput(session, "maxnodes", selected = query[['maxnodes']])
     }
   })
   
@@ -590,7 +592,7 @@ server <- function(input, output, session) {
     
     tagList(
       selectInput(inputId = "trait", label = "select trait", 
-                  choices = traitlist, selected = "")
+                  choices = traitlist, selected = traitlist[1])
     )
   })
   
@@ -624,7 +626,7 @@ server <- function(input, output, session) {
     } else {
       act_trait = isolate(storage$focus)
     }
-
+    
     message("getting subnet for act_trait: '", act_trait, "'")
     
     # get a network that is tractable
