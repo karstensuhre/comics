@@ -492,6 +492,14 @@ server <- function(input, output, session) {
     plat = "CLIN"
   )
 
+  # set focus if pull-down menu changes
+  observeEvent(input$trait,
+               {
+                 if (input$trait != "") {
+                   storage$focus <- input$trait
+                   # message("focus set by dropdown to ", storage$focus)
+                 }
+               })
   
   # read the URL parameter from session$clientData$url_search
   observe({
@@ -538,15 +546,6 @@ server <- function(input, output, session) {
                }
   )             
                
-  
-  # set focus if pull-down menu changes
-  observeEvent(input$trait,
-               {
-                 if (input$trait != "") {
-                   storage$focus <- input$trait
-                   # message("focus set by dropdown to ", storage$focus)
-                 }
-               })
   
   # set focus if network is clicked
   observeEvent(input$network_selected,
