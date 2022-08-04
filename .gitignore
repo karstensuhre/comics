@@ -1,3 +1,4 @@
+.gitignore
 assets/.Rhistory
 comics_webserver/*
 update_docker.sh
