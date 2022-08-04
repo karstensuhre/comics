@@ -1,4 +1,5 @@
 # use this script to update the docker image
+# this file should not be part of the GitHub files
 set -
 
 # copy files to assets
