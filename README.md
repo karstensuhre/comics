@@ -5,7 +5,7 @@ This is the GitHub page for the *comics* multiomics web-server.
 
 *Comics* is a [shiny interface](http://comics.metabolomix.com) to the [**The Molecular Human**](http://www.metabolomix.com/comics) and provides a visualization of over 34,000 associations between over 8,700 multiomics traits and disease endpoints.
 
-The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 374 participants of the multi-ethnic diabetes case-control study [QMDiab](https://academic.oup.com/jcem/article/99/3/E479/2537128).
+The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 391 participants of the multi-ethnic diabetes case-control study [QMDiab](https://academic.oup.com/jcem/article/99/3/E479/2537128).
 
 The links between the multiomics traits include partial correlations between traits from the same platform (GGMs), mutual best hits for pairwise all-against-all correlations between platforms, genome-wide, epigenome-wide and transcriptome-wide multiomics and disease associations, and associations with QMDiab clinical endpoints.
 
