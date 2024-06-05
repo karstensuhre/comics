@@ -7,6 +7,8 @@ This is the GitHub page for the *comics* multiomics web-server.
 
 The underlying networks are derived from 18 technically diverse deep molecular phenotyping (omics-)platforms analyzing urine, blood, and saliva samples from up to 391 participants of the multi-ethnic diabetes case-control study [QMDiab](https://academic.oup.com/jcem/article/99/3/E479/2537128).
 
+The raw data used to generate the *Comics* network is freely available on [FigShare](https://doi.org/10.6084/m9.figshare.25975627.v2). 
+
 The links between the multiomics traits include partial correlations between traits from the same platform (GGMs), mutual best hits for pairwise all-against-all correlations between platforms, genome-wide, epigenome-wide and transcriptome-wide multiomics and disease associations, and associations with QMDiab clinical endpoints.
 
 Details of the *comics* server and its underlying multiomics networks can be found on the [*comics* homepage](http://www.metabolomix.com/comics/).
