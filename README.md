@@ -1,5 +1,5 @@
 # comics
-**The Molecular Human – A Roadmap of Molecular Interactions Linking Multiomics Networks with Disease Endpoints**
+**A Roadmap to The Molecular Human - Linking Multiomics with Population Traits and Diabetes Subtypes**
 
 This is the GitHub page for the *comics* multiomics web-server.
 
